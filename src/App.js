@@ -224,7 +224,8 @@ const ForresterBIEstimator = () => {
   const [editingId, setEditingId] = useState(null);
   const [editingData, setEditingData] = useState(null);
   const [calendarView, setCalendarView] = useState('month');
-  const [projectStartDate, setProjectStartDate] = useState(new Date().toISOString().split('T')[0]);
+  // eslint-disable-next-line no-unused-vars
+  const [projectStartDate, _setProjectStartDate] = useState(new Date().toISOString().split('T')[0]);
   const [currentCalendarDate, setCurrentCalendarDate] = useState(new Date());
   const [showExportMenu, setShowExportMenu] = useState(false);
   const [clientName, setClientName] = useState('');
@@ -446,10 +447,6 @@ const ForresterBIEstimator = () => {
             [phaseId]: hours
         }
     }));
-  };
-  
-  const handleStartDateChange = (e) => {
-    setProjectStartDate(e.target.value);
   };
 
   const CalculationButton = () => (
